@@ -1,0 +1,10 @@
+dependencies {
+    // spring data mongodb
+    api 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+    // embedded mongodb
+    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+}
+
+tasks.jar { enabled = true }
+tasks.bootJar { enabled = false }
