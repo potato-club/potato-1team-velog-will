@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+generated/
+
+application-jwt.yml

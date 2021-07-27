@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.3.8.RELEASE"
+    id("org.springframework.boot") version "2.3.7.RELEASE"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     id("application")
     kotlin("jvm") version "1.5.20"
@@ -22,7 +22,7 @@ repositories {
 }
 
 application {
-    mainClass.set("com.potato.todolist.TodoApplicationKt")
+    mainClass.set("com.potato.velog.PotatoVelogApplicationKt")
 }
 
 subprojects {
