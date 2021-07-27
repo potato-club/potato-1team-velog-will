@@ -3,6 +3,7 @@ package com.potato.velog.controller.auth
 import com.potato.velog.config.session.MemberSession
 import com.potato.velog.controller.dto.ApiResponse
 import com.potato.velog.service.auth.AuthService
+import com.potato.velog.service.auth.dto.request.LoginRequest
 import com.potato.velog.service.auth.dto.request.SignUpRequest
 import com.potato.velog.service.auth.dto.response.LoginResponse
 import org.springframework.web.bind.annotation.PostMapping
@@ -21,6 +22,15 @@ class AuthController(
         @RequestBody request: SignUpRequest
     ): ApiResponse<LoginResponse> {
         val memberId = authService.signUp(request)
+        httpSession.setAttribute("MEMBER_SESSION", MemberSession(memberId))
+        return ApiResponse.success(LoginResponse(httpSession.id))
+    }
+
+    @PostMapping("/api/v1/login")
+    fun login(
+        @RequestBody request: LoginRequest
+    ): ApiResponse<LoginResponse> {
+        val memberId = authService.login(request)
         httpSession.setAttribute("MEMBER_SESSION", MemberSession(memberId))
         return ApiResponse.success(LoginResponse(httpSession.id))
     }

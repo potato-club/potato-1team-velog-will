@@ -1,4 +1,4 @@
-### [인증] 회원가입
+### 회원가입
 POST {{host_api}}/api/v1/signup
 Content-Type: application/json
 
@@ -6,6 +6,16 @@ Content-Type: application/json
   "email": "will.seungho@gmail.com",
   "password": "1234",
   "name": "will"
+}
+
+
+### [인증] 로그인
+POST {{host_api}}/api/v1/login
+Content-Type: application/json
+
+{
+  "email": "will.seungho@gmail.com",
+  "password": "1234"
 }
 
 
