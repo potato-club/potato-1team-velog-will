@@ -1,4 +1,4 @@
-package com.potato.velog.config
+package com.potato.velog.controller
 
 import com.potato.velog.controller.dto.ApiResponse
 import com.potato.velog.core.exception.*

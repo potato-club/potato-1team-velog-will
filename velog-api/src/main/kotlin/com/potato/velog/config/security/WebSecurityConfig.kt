@@ -1,4 +1,4 @@
-package com.potato.velog.config
+package com.potato.velog.config.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
