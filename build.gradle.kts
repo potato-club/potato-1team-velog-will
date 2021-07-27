@@ -22,7 +22,7 @@ repositories {
 }
 
 application {
-    mainClass.set("com.potato.velog.PotatoVelogApplicationKt")
+    mainClass.set("com.potato.velog.PotatoVelogApiApplicationKt")
 }
 
 subprojects {

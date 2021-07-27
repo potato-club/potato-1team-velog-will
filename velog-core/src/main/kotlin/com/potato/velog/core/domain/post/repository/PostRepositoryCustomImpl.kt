@@ -1,13 +1,12 @@
 package com.potato.velog.core.domain.post.repository
 
 import com.potato.velog.core.domain.post.PostStatus
-import com.querydsl.jpa.JPQLQueryFactory
 import com.potato.velog.core.domain.post.QPost.post
 import com.potato.velog.core.domain.member.QMember.member
-import com.potato.velog.core.domain.post.repository.QPostPaginationDto
+import com.querydsl.jpa.impl.JPAQueryFactory
 
 class PostRepositoryCustomImpl(
-    private val queryFactory: JPQLQueryFactory
+    private val queryFactory: JPAQueryFactory
 ) : PostRepositoryCustom {
 
     override fun findWithPagination(lastPostId: Long?, title: String?, size: Long): List<PostPaginationDto> {

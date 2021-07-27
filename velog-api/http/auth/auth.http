@@ -1,0 +1,14 @@
+### [인증] 회원가입
+POST {{host_api}}/api/v1/signup
+Content-Type: application/json
+
+{
+  "email": "will.seungho@gmail.com",
+  "password": "1234",
+  "name": "will"
+}
+
+
+### 로그아웃
+POST {{host_api}}/api/v1/logout
+Content-Type: application/json

@@ -5,3 +5,5 @@ spring:
     active: local
     include:
       - db
+  datasource:
+    schema: classpath:/schema.sql

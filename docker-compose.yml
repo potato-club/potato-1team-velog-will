@@ -1,7 +1,0 @@
-version: '3'
-services:
-  mongodb:
-    image: mongo
-    ports:
-      - 27077:27017
-    container_name: "potato-velog-mongo"

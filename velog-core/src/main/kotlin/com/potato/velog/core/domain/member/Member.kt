@@ -12,7 +12,7 @@ class Member(
     var password: String,
     var name: String,
     var profileUrl: String = "",
-    var description: String = ""
+    var introduction: String = ""
 ) : BaseTimeEntity() {
 
     @Id
