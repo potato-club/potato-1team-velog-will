@@ -31,4 +31,14 @@ class Post(
     var status: PostStatus = status
         protected set
 
+    fun update(title: String, content: String, status: PostStatus) {
+        this.title = title;
+        this.content = content
+        this.status = status
+    }
+
+    fun delete() {
+        this.status = PostStatus.DELETED
+    }
+
 }

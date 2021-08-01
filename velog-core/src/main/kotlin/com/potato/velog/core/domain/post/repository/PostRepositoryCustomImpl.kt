@@ -3,6 +3,7 @@ package com.potato.velog.core.domain.post.repository
 import com.potato.velog.core.domain.post.PostStatus
 import com.potato.velog.core.domain.post.QPost.post
 import com.potato.velog.core.domain.member.QMember.member
+import com.potato.velog.core.domain.post.Post
 import com.querydsl.jpa.impl.JPAQueryFactory
 
 class PostRepositoryCustomImpl(
@@ -26,6 +27,14 @@ class PostRepositoryCustomImpl(
             .orderBy(post.id.desc())
             .limit(size)
             .fetch()
+    }
+
+    override fun findPostByIdAndMemberId(postId: Long, memberId: Long): Post? {
+        return queryFactory.selectFrom(post)
+            .where(
+                post.id.eq(postId),
+                post.memberId.eq(memberId)
+            ).fetchOne()
     }
 
 }
