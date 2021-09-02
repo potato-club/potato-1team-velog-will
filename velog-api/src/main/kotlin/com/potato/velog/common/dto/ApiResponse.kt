@@ -1,4 +1,4 @@
-package com.potato.velog.controller.dto
+package com.potato.velog.common.dto
 
 data class ApiResponse<T>(
         val status: String = "",

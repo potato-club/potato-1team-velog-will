@@ -2,8 +2,8 @@ package com.potato.velog.controller.member
 
 import com.potato.velog.config.argumentresolver.MemberId
 import com.potato.velog.config.interceptor.Auth
-import com.potato.velog.controller.dto.ApiResponse
-import com.potato.velog.service.auth.dto.response.MemberInfoResponse
+import com.potato.velog.common.dto.ApiResponse
+import com.potato.velog.service.member.dto.response.MemberInfoResponse
 import com.potato.velog.service.member.MemberService
 import com.potato.velog.service.member.dto.request.UpdateMemberInfoRequest
 import org.springframework.web.bind.annotation.GetMapping

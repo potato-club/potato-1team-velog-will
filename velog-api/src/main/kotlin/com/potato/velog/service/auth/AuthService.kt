@@ -25,7 +25,7 @@ class AuthService(
     fun login(request: LoginRequest): Long {
         val member = MemberServiceUtils.findMemberByEmail(memberRepository, request.email)
         if (!passwordEncoder.matches(request.password, member.password)) {
-            throw NotFoundException("비밀번호가 일치하지 않습니다")
+            throw NotFoundException("해당하는 사용자(${request.email})는 존재하지 않습니다.")
         }
         return member.id
     }

@@ -2,10 +2,10 @@ package com.potato.velog.controller.post
 
 import com.potato.velog.config.argumentresolver.MemberId
 import com.potato.velog.config.interceptor.Auth
-import com.potato.velog.controller.dto.ApiResponse
+import com.potato.velog.common.dto.ApiResponse
 import com.potato.velog.service.post.PostService
 import com.potato.velog.service.post.dto.request.AddPostRequest
-import com.potato.velog.service.post.PostPaginationResponse
+import com.potato.velog.service.post.dto.response.PostPaginationResponse
 import com.potato.velog.service.post.dto.request.RetrievePostsPagination
 import com.potato.velog.service.post.dto.request.UpdatePostRequest
 import com.potato.velog.service.post.dto.response.PostInfoResponse

@@ -1,6 +1,6 @@
 package com.potato.velog.service.post.dto.response
 
-import com.potato.velog.controller.dto.BaseTimeResponse
+import com.potato.velog.common.dto.BaseTimeResponse
 import com.potato.velog.core.domain.post.Post
 import com.potato.velog.core.domain.post.PostStatus
 

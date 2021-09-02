@@ -1,4 +1,4 @@
-package com.potato.velog.service.auth.dto.response
+package com.potato.velog.service.member.dto.response
 
 import com.potato.velog.core.domain.member.Member
 

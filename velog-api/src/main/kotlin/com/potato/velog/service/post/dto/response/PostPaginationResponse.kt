@@ -1,4 +1,4 @@
-package com.potato.velog.service.post
+package com.potato.velog.service.post.dto.response
 
 import com.potato.velog.core.domain.post.repository.PostProjection
 import java.time.LocalDateTime

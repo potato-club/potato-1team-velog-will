@@ -2,7 +2,7 @@ package com.potato.velog.service.member
 
 import com.potato.velog.core.domain.member.MemberRepository
 import com.potato.velog.core.exception.NotFoundException
-import com.potato.velog.service.auth.dto.response.MemberInfoResponse
+import com.potato.velog.service.member.dto.response.MemberInfoResponse
 import com.potato.velog.service.member.dto.request.UpdateMemberInfoRequest
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

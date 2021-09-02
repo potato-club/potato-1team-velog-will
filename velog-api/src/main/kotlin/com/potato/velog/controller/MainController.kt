@@ -1,6 +1,6 @@
 package com.potato.velog.controller
 
-import com.potato.velog.controller.dto.ApiResponse
+import com.potato.velog.common.dto.ApiResponse
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 

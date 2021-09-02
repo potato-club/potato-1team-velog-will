@@ -1,4 +1,4 @@
-package com.potato.velog.controller.dto
+package com.potato.velog.common.dto
 
 import com.potato.velog.core.domain.BaseTimeEntity
 import java.time.LocalDateTime

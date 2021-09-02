@@ -1,6 +1,6 @@
 package com.potato.velog.controller
 
-import com.potato.velog.controller.dto.ApiResponse
+import com.potato.velog.common.dto.ApiResponse
 import com.potato.velog.core.exception.*
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

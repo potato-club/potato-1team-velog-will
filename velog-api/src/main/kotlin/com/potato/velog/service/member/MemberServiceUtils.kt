@@ -9,7 +9,7 @@ object MemberServiceUtils {
 
     fun findMemberByEmail(memberRepository: MemberRepository, email: String): Member {
         return memberRepository.findByEmail(email)
-            ?: throw NotFoundException("해당하는 이메일($email)을 가진 사용자는 존재하지 않습니다.")
+            ?: throw NotFoundException("해당하는 사용자($email)는 존재하지 않습니다.")
     }
 
     fun validateNotExistEmail(memberRepository: MemberRepository, email: String) {

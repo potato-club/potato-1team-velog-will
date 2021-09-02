@@ -5,6 +5,7 @@ import com.potato.velog.service.post.dto.response.PostInfoResponse
 import com.potato.velog.service.post.dto.request.RetrievePostsPagination
 import com.potato.velog.core.domain.post.PostRepository
 import com.potato.velog.service.post.dto.request.UpdatePostRequest
+import com.potato.velog.service.post.dto.response.PostPaginationResponse
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

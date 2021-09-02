@@ -2,7 +2,7 @@ package com.potato.velog.controller.auth
 
 import com.potato.velog.config.interceptor.Auth
 import com.potato.velog.config.session.SessionConstants
-import com.potato.velog.controller.dto.ApiResponse
+import com.potato.velog.common.dto.ApiResponse
 import com.potato.velog.service.auth.AuthService
 import com.potato.velog.service.auth.dto.request.LoginRequest
 import com.potato.velog.service.auth.dto.request.SignUpRequest
