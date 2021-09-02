@@ -1,9 +1,9 @@
 package com.potato.velog.controller.dto
 
 data class ApiResponse<T>(
-    val status: String = "",
-    val message: String = "",
-    val data: T?
+        val status: String = "",
+        val message: String = "",
+        val data: T?
 ) {
 
     companion object {

@@ -28,6 +28,7 @@ class Post(
     var content: String = content
         protected set
 
+    @Enumerated(EnumType.STRING)
     var status: PostStatus = status
         protected set
 

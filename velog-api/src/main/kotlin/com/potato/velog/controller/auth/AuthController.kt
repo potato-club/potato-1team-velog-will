@@ -1,6 +1,7 @@
 package com.potato.velog.controller.auth
 
-import com.potato.velog.config.session.MemberSession
+import com.potato.velog.config.interceptor.Auth
+import com.potato.velog.config.session.SessionConstants
 import com.potato.velog.controller.dto.ApiResponse
 import com.potato.velog.service.auth.AuthService
 import com.potato.velog.service.auth.dto.request.LoginRequest
@@ -13,31 +14,32 @@ import javax.servlet.http.HttpSession
 
 @RestController
 class AuthController(
-    private val authService: AuthService,
-    private val httpSession: HttpSession
+        private val authService: AuthService,
+        private val httpSession: HttpSession
 ) {
 
     @PostMapping("/api/v1/signup")
     fun singUp(
-        @RequestBody request: SignUpRequest
+            @RequestBody request: SignUpRequest
     ): ApiResponse<LoginResponse> {
         val memberId = authService.signUp(request)
-        httpSession.setAttribute("MEMBER_SESSION", MemberSession(memberId))
+        httpSession.setAttribute(SessionConstants.MEMBER_SESSION, memberId)
         return ApiResponse.success(LoginResponse(httpSession.id))
     }
 
     @PostMapping("/api/v1/login")
     fun login(
-        @RequestBody request: LoginRequest
+            @RequestBody request: LoginRequest
     ): ApiResponse<LoginResponse> {
         val memberId = authService.login(request)
-        httpSession.setAttribute("MEMBER_SESSION", MemberSession(memberId))
+        httpSession.setAttribute(SessionConstants.MEMBER_SESSION, memberId)
         return ApiResponse.success(LoginResponse(httpSession.id))
     }
 
+    @Auth
     @PostMapping("/api/v1/logout")
     fun logout(): ApiResponse<String> {
-        httpSession.invalidate()
+        httpSession.removeAttribute(SessionConstants.MEMBER_SESSION)
         return ApiResponse.OK
     }
 

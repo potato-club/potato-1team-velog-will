@@ -11,5 +11,5 @@ class MainController {
     fun ping(): ApiResponse<String> {
         return ApiResponse.OK
     }
-    
+
 }
