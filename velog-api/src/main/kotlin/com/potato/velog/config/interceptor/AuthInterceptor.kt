@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse
 
 @Component
 class AuthInterceptor(
-        private val sessionRepository: SessionRepository<out Session?>
+    private val sessionRepository: SessionRepository<out Session?>
 ) : HandlerInterceptor {
 
     override fun preHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any): Boolean {
@@ -25,7 +25,7 @@ class AuthInterceptor(
 
         val sessionId = request.getHeader(HttpHeaders.AUTHORIZATION).split(PREFIX)[1]
         val session = sessionRepository.findById(sessionId)
-                ?: throw UnAuthorizedException("세션이 만료되었습니다. 다시 로그인해주세요")
+            ?: throw UnAuthorizedException("세션이 만료되었습니다. 다시 로그인해주세요")
         request.setAttribute("memberId", session.getAttribute(SessionConstants.MEMBER_SESSION))
         return true
     }

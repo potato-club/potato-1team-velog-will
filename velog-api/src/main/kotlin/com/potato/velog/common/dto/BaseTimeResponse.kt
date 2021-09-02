@@ -4,8 +4,8 @@ import com.potato.velog.core.domain.BaseTimeEntity
 import java.time.LocalDateTime
 
 open class BaseTimeResponse(
-        var createdAt: LocalDateTime? = null,
-        var updatedAt: LocalDateTime? = null
+    var createdAt: LocalDateTime? = null,
+    var updatedAt: LocalDateTime? = null
 ) {
 
     fun setBaseTime(baseTimeEntity: BaseTimeEntity) {

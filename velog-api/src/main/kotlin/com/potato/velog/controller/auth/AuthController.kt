@@ -19,7 +19,7 @@ class AuthController(
 ) {
 
     @PostMapping("/api/v1/signup")
-    fun singUp(
+    fun signUp(
             @RequestBody request: SignUpRequest
     ): ApiResponse<LoginResponse> {
         val memberId = authService.signUp(request)

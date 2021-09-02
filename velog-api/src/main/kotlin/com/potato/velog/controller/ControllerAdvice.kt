@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 
 @RestControllerAdvice
 class ControllerAdvice(
-) {
-
     private val logger: Logger = LoggerFactory.getLogger(ControllerAdvice::class.java)
+) {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ValidationException::class)

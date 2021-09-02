@@ -16,7 +16,12 @@ class MemberIdResolver : HandlerMethodArgumentResolver {
         return hasMemberIdAnnotation.and(isLongType)
     }
 
-    override fun resolveArgument(parameter: MethodParameter, mavContainer: ModelAndViewContainer?, webRequest: NativeWebRequest, binderFactory: WebDataBinderFactory?): Any? {
+    override fun resolveArgument(
+        parameter: MethodParameter,
+        mavContainer: ModelAndViewContainer?,
+        webRequest: NativeWebRequest,
+        binderFactory: WebDataBinderFactory?
+    ): Any? {
         return webRequest.getAttribute("memberId", 0)
     }
 

@@ -5,7 +5,7 @@ import com.potato.velog.core.domain.member.MemberRepository
 import org.junit.jupiter.api.BeforeEach
 import org.springframework.beans.factory.annotation.Autowired
 
-abstract class MemberSetUpTest() {
+abstract class MemberSetUpTest {
     @Autowired
     private lateinit var memberRepository: MemberRepository
 

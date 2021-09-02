@@ -5,10 +5,10 @@ import com.potato.velog.core.domain.post.Post
 import com.potato.velog.core.domain.post.PostStatus
 
 data class PostInfoResponse(
-        val postId: Long,
-        val title: String,
-        val content: String,
-        val status: PostStatus
+    val postId: Long,
+    val title: String,
+    val content: String,
+    val status: PostStatus
 ) : BaseTimeResponse() {
 
     companion object {

@@ -19,9 +19,9 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
         http
-                .csrf().disable()
-                .formLogin().disable()
-                .headers().frameOptions().disable()
+            .csrf().disable()
+            .formLogin().disable()
+            .headers().frameOptions().disable()
     }
 
 }

@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 class PostController(
-        private val postService: PostService
+    private val postService: PostService
 ) {
 
     @Auth
     @PostMapping("/api/v1/post")
     fun addPost(
-            @RequestBody request: AddPostRequest,
-            @MemberId memberId: Long
+        @RequestBody request: AddPostRequest,
+        @MemberId memberId: Long
     ): ApiResponse<PostInfoResponse> {
         return ApiResponse.success(postService.addPost(request, memberId))
     }
 
     @GetMapping("/api/v1/posts")
     fun retrievePostsPagination(
-            request: RetrievePostsPagination
+        request: RetrievePostsPagination
     ): ApiResponse<List<PostPaginationResponse>> {
         return ApiResponse.success(postService.retrievePostsPagination(request))
     }
@@ -35,9 +35,9 @@ class PostController(
     @Auth
     @PutMapping("/api/v1/post/{postId}")
     fun updatePost(
-            @PathVariable postId: Long,
-            @RequestBody request: UpdatePostRequest,
-            @MemberId memberId: Long
+        @PathVariable postId: Long,
+        @RequestBody request: UpdatePostRequest,
+        @MemberId memberId: Long
     ): ApiResponse<PostInfoResponse> {
         return ApiResponse.success(postService.updatePost(postId, request, memberId))
     }
@@ -45,8 +45,8 @@ class PostController(
     @Auth
     @DeleteMapping("/api/v1/post/{postId}")
     fun deletePost(
-            @PathVariable postId: Long,
-            @MemberId memberId: Long
+        @PathVariable postId: Long,
+        @MemberId memberId: Long
     ): ApiResponse<String> {
         postService.deletePost(postId, memberId)
         return ApiResponse.OK
