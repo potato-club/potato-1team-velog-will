@@ -10,9 +10,9 @@ class PostRepositoryCustomImpl(
     private val queryFactory: JPAQueryFactory
 ) : PostRepositoryCustom {
 
-    override fun findWithPagination(lastPostId: Long?, title: String?, size: Long): List<PostPaginationDto> {
+    override fun findWithPagination(lastPostId: Long?, title: String?, size: Long): List<PostProjection> {
         return queryFactory.select(
-            QPostPaginationDto(
+            QPostProjection(
                 post.id, post.title, post.content, post.createdAt, post.updatedAt,
                 member.name, member.profileUrl
             )

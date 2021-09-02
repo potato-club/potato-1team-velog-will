@@ -2,7 +2,6 @@ package com.potato.velog.service.post
 
 import com.potato.velog.service.post.dto.request.AddPostRequest
 import com.potato.velog.service.post.dto.response.PostInfoResponse
-import com.potato.velog.core.domain.post.repository.PostPaginationDto
 import com.potato.velog.service.post.dto.request.RetrievePostsPagination
 import com.potato.velog.core.domain.post.PostRepository
 import com.potato.velog.service.post.dto.request.UpdatePostRequest
@@ -11,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class PostService(
-    private val postRepository: PostRepository
+        private val postRepository: PostRepository
 ) {
 
     @Transactional
@@ -20,8 +19,10 @@ class PostService(
     }
 
     @Transactional(readOnly = true)
-    fun retrievePostsPagination(request: RetrievePostsPagination): List<PostPaginationDto> {
-        return postRepository.findWithPagination(request.lastPostId, request.title, request.size)
+    fun retrievePostsPagination(request: RetrievePostsPagination): List<PostPaginationResponse> {
+        return postRepository.findWithPagination(request.lastPostId, request.title, request.size).asSequence()
+                .map { PostPaginationResponse.of(it) }
+                .toList()
     }
 
     @Transactional
