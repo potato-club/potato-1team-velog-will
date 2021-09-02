@@ -20,4 +20,10 @@ class Member(
     var id: Long = 0
         protected set
 
+    fun update(name: String, profileUrl: String, introduction: String) {
+        this.name = name
+        this.profileUrl = profileUrl
+        this.introduction = introduction
+    }
+
 }
