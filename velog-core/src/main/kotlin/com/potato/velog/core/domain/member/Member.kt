@@ -17,8 +17,7 @@ class Member(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0
-        protected set
+    val id: Long = 0
 
     fun update(name: String, profileUrl: String, introduction: String) {
         this.name = name

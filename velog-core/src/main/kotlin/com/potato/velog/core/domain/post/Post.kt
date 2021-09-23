@@ -5,32 +5,15 @@ import javax.persistence.*
 
 @Entity
 class Post(
-    memberId: Long,
-    title: String,
-    content: String,
-    status: PostStatus
+    @Column(nullable = false) var memberId: Long,
+    @Column(nullable = false) var title: String,
+    @Column(nullable = false, columnDefinition = "TEXT") var content: String,
+    @Enumerated(EnumType.STRING) var status: PostStatus
 ) : BaseTimeEntity() {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0
-        protected set
-
-    @Column(nullable = false)
-    var memberId: Long = memberId
-        protected set
-
-    @Column(nullable = false)
-    var title: String = title
-        protected set
-
-    @Column(nullable = false, columnDefinition = "TEXT")
-    var content: String = content
-        protected set
-
-    @Enumerated(EnumType.STRING)
-    var status: PostStatus = status
-        protected set
+    val id: Long = 0
 
     fun update(title: String, content: String, status: PostStatus) {
         this.title = title;

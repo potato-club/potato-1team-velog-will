@@ -10,7 +10,12 @@ data class AddPostRequest(
 ) {
 
     fun toEntity(memberId: Long): Post {
-        return Post(memberId, title, content, status)
+        return Post(
+            memberId = memberId,
+            title = title,
+            content = content,
+            status = status
+        )
     }
 
 }

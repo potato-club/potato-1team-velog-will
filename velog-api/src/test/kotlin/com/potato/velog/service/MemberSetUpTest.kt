@@ -13,7 +13,11 @@ abstract class MemberSetUpTest {
 
     @BeforeEach
     fun setUpMember() {
-        val member = Member("will.seungho@gmail.com", "password", "will")
+        val member = Member(
+            email = "will.seungho@gmail.com",
+            password = "password",
+            name = "will"
+        )
         memberId = member.id
         memberRepository.save(member)
     }

@@ -21,9 +21,8 @@ class PostService(
 
     @Transactional(readOnly = true)
     fun retrievePostsPagination(request: RetrievePostsPagination): List<PostPaginationResponse> {
-        return postRepository.findWithPagination(request.lastPostId, request.title, request.size).asSequence()
+        return postRepository.findWithPagination(request.lastPostId, request.title, request.size)
             .map { PostPaginationResponse.of(it) }
-            .toList()
     }
 
     @Transactional

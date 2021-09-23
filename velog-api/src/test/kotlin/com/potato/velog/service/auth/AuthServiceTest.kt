@@ -55,7 +55,13 @@ internal class AuthServiceTest(
     fun 회원가입시_이미_존재하는_이메일인경우_에러_발생() {
         // given
         val email = "will.seungho@gmail.com"
-        memberRepository.save(Member(email, "password", "name"))
+        memberRepository.save(
+            Member(
+                email = email,
+                password = "password",
+                name = "name"
+            )
+        )
 
         val request = SignUpRequest(email, "password", "another name")
 
@@ -68,7 +74,11 @@ internal class AuthServiceTest(
         // given
         val email = "will.seungho@gmail.com"
         val password = "password"
-        val member = Member(email, passwordEncoder.encode(password), "name")
+        val member = Member(
+            email = email,
+            password = passwordEncoder.encode(password),
+            name = "name"
+        )
         memberRepository.save(member)
 
         val request = LoginRequest(email, password)
@@ -93,7 +103,11 @@ internal class AuthServiceTest(
     fun 로그인시_비밀번호가_일치하지_않으면_에러_발생() {
         // given
         val email = "will.seungho@gmail.com"
-        val member = Member(email, "password", "name")
+        val member = Member(
+            email = email,
+            password = "password",
+            name = "name"
+        )
         memberRepository.save(member)
 
         val request = LoginRequest(email, "anotherPassword")

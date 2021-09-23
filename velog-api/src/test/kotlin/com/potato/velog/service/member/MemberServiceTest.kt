@@ -26,7 +26,13 @@ internal class MemberServiceTest(
     @Test
     fun 멤버_정보를_수정한다() {
         // given
-        val member = memberRepository.save(Member("will.seungho@gmail.com", "passsword", "will"))
+        val member = memberRepository.save(
+            Member(
+                email = "will.seungho@gmail.com",
+                password = "passsword",
+                name = "will"
+            )
+        )
 
         val request = UpdateMemberInfoRequest("willlll", "https://profile.com", "윌 입니다")
 
