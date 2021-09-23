@@ -5,10 +5,17 @@ import javax.persistence.*
 
 @Entity
 class Post(
-    @Column(nullable = false) var memberId: Long,
-    @Column(nullable = false) var title: String,
-    @Column(nullable = false, columnDefinition = "TEXT") var content: String,
-    @Enumerated(EnumType.STRING) var status: PostStatus
+    @Column(nullable = false)
+    var memberId: Long,
+
+    @Column(nullable = false)
+    var title: String,
+
+    @Column(nullable = false, columnDefinition = "TEXT")
+    var content: String,
+
+    @Enumerated(EnumType.STRING)
+    var status: PostStatus
 ) : BaseTimeEntity() {
 
     @Id

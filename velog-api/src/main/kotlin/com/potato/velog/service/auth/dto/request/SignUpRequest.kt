@@ -5,7 +5,9 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import javax.validation.constraints.Email
 
 data class SignUpRequest(
-    @Email val email: String,
+    @Email
+    val email: String,
+
     val password: String,
     val name: String
 ) {
